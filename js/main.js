@@ -1,32 +1,32 @@
 //declaramos funciones para asignar valor a usuario y edad
 
-function suscripcion() {
+function pedirNombre() {
     usuario = prompt("Ingrese su usuario");
 }
 
-function edadUsu() {
+function pedirEdad() {
     edad = parseInt(prompt("Hola " + usuario + "!\n" + "Ingresa tu edad!"));
 }
 
 // declaracion de funciones para seleccion de peliculas según
 //rango de edad
 
-function infantiles() {
+function seleccionarPeliInf() {
     seleccion = parseInt(prompt("Tenemos estos peliculas para vos!\n 1 Toy Story\n 2 Coco\n 3 Moana\n 4 Spider-Man\n 5 El Rey León\n Si queres mirar alguna solo tenes que ingresar el número que tiene al costado!"));
 }
 
-function adolescentes() {
+function seleccionarPeliAdol() {
     seleccion = parseInt(prompt("Tenemos estos peliculas para vos!\n 1 Super 8\n 2 Barbie\n 3 Juno\n 4 Chicas Pesadas\n 5 Soy Leyenda\n Si queres mirar alguna solo tenes que ingresar el número que tiene al costado!"));
 }
 
-function adultos() {
+function seleccionarPeliAdul() {
     seleccion = parseInt(prompt("Tenemos estos peliculas para vos!\n 1 Sueños de libertad\n 2 El caballero de la noche\n 3 Pulp Fiction\n 4 La milla verde\n 5 Oppenheimer\n Si queres mirar alguna solo tenes que ingresar el número que tiene al costado!"));
 }
 
-function repetirInf() {
-    infantiles();
+function pelisInfantiles() {
+    seleccionarPeliInf();
     while ((isNaN(seleccion)) || ((seleccion < 1) || (seleccion > 5))) {
-        infantiles();
+        seleccionarPeliInf();
     }
     switch (seleccion) {
         case 1: pelicula = "Toy Story";
@@ -47,10 +47,10 @@ function repetirInf() {
     seguir = confirm("Querés mirar otra pelicula?");
 }
 
-function repetirAdol() {
-    adolescentes();
+function pelisAdolescentes() {
+    seleccionarPeliAdol();
     while ((isNaN(seleccion)) || ((seleccion < 1) || (seleccion > 5))) {
-        adolescentes();
+        seleccionarPeliAdol();
     }
     switch (seleccion) {
         case 1: pelicula = "Super 8";
@@ -71,10 +71,10 @@ function repetirAdol() {
     seguir = confirm("Querés mirar otra pelicula?");
 }
 
-function repetirAdul() {
-    adultos();
+function pelisAdultos() {
+    seleccionarPeliAdul();
     while ((isNaN(seleccion)) || ((seleccion < 1) || (seleccion > 5))) {
-        adultos();
+        seleccionarPeliAdul();
     }
     switch (seleccion) {
         case 1: pelicula = "Sueños de libertad";
@@ -105,36 +105,36 @@ let seguir;
 let pelicula;
 let cantPelis = 0;
 
-suscripcion();
+pedirNombre();
 
 while (usuario == "") {
-    suscripcion();
+    pedirNombre();
 }
 
 if (usuario != null) {
 
-    edadUsu();
+    pedirEdad();
 
     while (isNaN(edad) || edad < 1) {
-        edadUsu();
+        pedirEdad();
     }
 
     alert("Recorda que cada pelicula tiene un costo de $2000.-")
 
     if (edad < 13) {
-        repetirInf();
+        pelisInfantiles();
         while (seguir) {
-            repetirInf();
+            pelisInfantiles();
         }
     } else if (edad < 18) {
-        repetirAdol();
+        pelisAdolescentes();
         while (seguir) {
-            repetirAdol();
+            pelisAdolescentes();
         }
     } else if (edad >= 18) {
-        repetirAdul();
+        pelisAdultos();
         while (seguir) {
-            repetirAdul();
+            pelisAdultos();
         }
     }
 
