@@ -1,13 +1,44 @@
-let usuario;
-let edad;
-let seleccion;
-let seguir;
-let pelicula;
-let cantPelis = 0;
+class Pelicula {
+    constructor(titulo, director, duracion, reparto, genero) {
+        this.titulo = titulo;
+        this.director = director;
+        this.duracion = duracion;
+        this.reparto = reparto;
+        this.genero = genero;
+    }
+}
+
+const peli1 = new Pelicula("Toy Story", "John Lasseter", 81, "Tom Hanks, Tim Allen", "Animada");
+const peli2 = new Pelicula("Coco", "Lee Unkrich, Adrián Molina", 105, "Anthony Gonzalez, Gael García Bernal", "Animada");
+const peli3 = new Pelicula("Moana", "Ron Clements", 107, "Auli'i Cravalho, Dwayne Johnson", "Animada");
+const peli4 = new Pelicula("Spider-Man", "Jon Watts", 148, "Tom Holland, Zendaya", "Acción");
+const peli5 = new Pelicula("El Rey León", "Rob Minkoff", 88, "Matthew Broderick, James Earl Jones", "Animada");
+
+const peli6 = new Pelicula("Super 8", "J. J. Abrams", 112, "Joel Courtney, Elle Fanning", "Aventura");
+const peli7 = new Pelicula("Barbie", "Greta Gerwig", 114, "Ryan Gosling, Margot Robbie", "Comedia");
+const peli8 = new Pelicula("Juno", "Jason Reitman", 96, "Ellen Page, Jennifer Garner", "Drama");
+const peli9 = new Pelicula("Chicas Pesadas", "Mark Waters", 97, "Lindsay Lohan, Rachel McAdams", "Comedia");
+const peli10 = new Pelicula("Soy Leyenda", "Francis Lawrence", 101, "Will Smith, Alice Braga", "Ciencia ficción");
+
+const peli11 = new Pelicula("Escape a la libertad", "Frank Darabont", 142, "Tim Robbins, Morgan Freeman");
+const peli12 = new Pelicula("El caballero de la noche", "Christopher Nolan", 152, "Christian Bale, Michael Caine, Heath Ledger, Gary Oldman, Morgan Freeman", "Acción");
+const peli13 = new Pelicula("Pulp Fiction", "Quentin Tarantino", 154, "John Travolta, Samuel L. Jackson, Uma Thurman, Bruce Willis", "Drama");
+const peli14 = new Pelicula("Milagros inesperados", "Frank Darabont", 188, "Tom Hanks, Michael Clarke Duncan", "Drama");
+const peli15 = new Pelicula("Oppenheimer", "Christopher Nolan", 180, "Cillian Murphy, Emily Blunt Margot Robbie, Matt Damon", "Drama");
+
+
+const peliculasInfantiles = [];
+const peliculasAdolescentes = [];
+const peliculasAdultos = [];
+const peliculasTodas = [];
+
+peliculasInfantiles.push(peli1, peli2, peli3, peli4, peli5);
+peliculasAdolescentes.push(peli6, peli7, peli8, peli9, peli10);
+peliculasAdultos.push(peli11, peli12, peli13, peli14, peli15);
+peliculasTodas.push(peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15)
+
 
 alert("Bienvenido a CODERFLIX\nAcá vas a encontrar tus peliculas y series favoritas");
-
-//funciones para asignar valor a usuario y edad
 
 function pedirNombre() {
     usuario = prompt("Ingrese su usuario");
@@ -33,115 +64,97 @@ if (usuario != null) {
 
     alert("Recorda que cada pelicula tiene un costo de $2000.-")
 
+    let elegirPeli;
+    do {
+        elegirPeli = prompt("1 Catalogo completo\n2 Infantiles\n3 Adolescentes\n4 Adultos\n5 Busqueda \n\nIngresa el numero que se corresponde con tu búsqueda.\nEj: Ingresa '3' Para seleccionar 'Adultos'")
+    } while (elegirPeli < 1 || elegirPeli > 5 || elegirPeli == "")
 
-    //para menores de 13
-
-    function dashBoardInfantiles() {
-        seleccionarPeliInf();
-        while ((isNaN(seleccion)) || ((seleccion < 1) || (seleccion > 5))) {
-            seleccionarPeliInf();
+    let peliculaSeleccionada;
+    let mostrarPeliculas = [];
+    if (elegirPeli == 1) {
+        for (let i = 0; i < peliculasTodas.length; i++) {
+            mostrarPeliculas.push(peliculasTodas[i].titulo);
         }
-        switch (seleccion) {
-            case 1: pelicula = "Toy Story";
-                break;
-            case 2: pelicula = "Coco";
-                break;
-            case 3: pelicula = "Moana";
-                break;
-            case 4: pelicula = "Spider-Man";
-                break;
-            case 5: pelicula = "El Rey León";
-                break;
-            default: pelicula = "No selecciono ninguna pelicula";
-                break;
+        peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+        let peliculaElegida = peliculasTodas.find((el) => el.titulo === peliculaSeleccionada)
+        if (peliculaElegida !== undefined) {
+            console.log(peliculaElegida)
+        } else {
+            console.log("No hay coincidencias en su búsqueda")
         }
-        alert("Termino " + pelicula);
-        cantPelis++;
-        seguir = confirm("Querés mirar otra pelicula?");
-    }
 
 
-    function seleccionarPeliInf() {
-        seleccion = parseInt(prompt("Tenemos estos peliculas para vos!\n 1 Toy Story\n 2 Coco\n 3 Moana\n 4 Spider-Man\n 5 El Rey León\n Si queres mirar alguna solo tenes que ingresar el número que tiene al costado!"));
-    }
 
-    //para menores de 18
+    } else if (elegirPeli == 2) {
+        for (let i = 0; i < peliculasInfantiles.length; i++) {
+            mostrarPeliculas.push(peliculasInfantiles[i].titulo);
+        }
+        peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+        let peliculaElegida = peliculasInfantiles.find((el) => el.titulo === peliculaSeleccionada)
+        if (peliculaElegida !== undefined) {
+            console.log(peliculaElegida)
+        } else {
+            console.log("No hay coincidencias en su búsqueda")
+        }
+    } else if (elegirPeli == 3) {
+        for (let i = 0; i < peliculasAdolescentes.length; i++) {
+            mostrarPeliculas.push(peliculasAdolescentes[i].titulo);
+        }
+        peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+        let peliculaElegida = peliculasAdolescentes.find((el) => el.titulo === peliculaSeleccionada)
+        if (peliculaElegida !== undefined) {
+            console.log(peliculaElegida)
+        } else {
+            console.log("No hay coincidencias en su búsqueda")
+        }
 
-    function dashBoardAdolescentes() {
-        seleccionarPeliAdol();
-        while ((isNaN(seleccion)) || ((seleccion < 1) || (seleccion > 5))) {
-            seleccionarPeliAdol();
+    } else if (elegirPeli == 4) {
+        for (let i = 0; i < peliculasAdultos.length; i++) {
+            mostrarPeliculas.push(peliculasAdultos[i].titulo);
         }
-        switch (seleccion) {
-            case 1: pelicula = "Super 8";
-                break;
-            case 2: pelicula = "Barbie";
-                break;
-            case 3: pelicula = "Juno";
-                break;
-            case 4: pelicula = "Chicas Pesadas";
-                break;
-            case 5: pelicula = "Soy Leyenda";
-                break;
-            default: pelicula = "No selecciono ninguna pelicula";
-                break;
+        peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+        let peliculaElegida = peliculasAdultos.find((el) => el.titulo === peliculaSeleccionada)
+        if (peliculaElegida !== undefined) {
+            console.log(peliculaElegida)
+        } else {
+            console.log("No hay coincidencias en su búsqueda")
         }
-        alert("Termino " + pelicula);
-        cantPelis++;
-        seguir = confirm("Querés mirar otra pelicula?");
-    }
-    function seleccionarPeliAdol() {
-        seleccion = parseInt(prompt("Tenemos estos peliculas para vos!\n 1 Super 8\n 2 Barbie\n 3 Juno\n 4 Chicas Pesadas\n 5 Soy Leyenda\n Si queres mirar alguna solo tenes que ingresar el número que tiene al costado!"));
-    }
+    } else {
+        let buscarPor = prompt("1 Director\n2 Genero")
+        if (buscarPor == 1) {
+            let filtrarDirector = prompt("Ingrese el director que desea buscar")
+            let filtrados = peliculasTodas.filter((el) => el.director === filtrarDirector);
+            let peliculasFiltradas = [];
+            for (let i = 0; i < filtrados.length; i++) {
+                peliculasFiltradas.push(filtrados[i].titulo)
+            }
 
-    //para mayores de 18
+            if (peliculasFiltradas !== undefined) {
+                let elegirPelicula = prompt(peliculasFiltradas.join("\n"));
+            } else {
+                alert("No hay coincidencias con su búsqueda")
+            }
 
-    function dashBoardAdultos() {
-        seleccionarPeliAdul();
-        while ((isNaN(seleccion)) || ((seleccion < 1) || (seleccion > 5))) {
-            seleccionarPeliAdul();
-        }
-        switch (seleccion) {
-            case 1: pelicula = "Sueños de libertad";
-                break;
-            case 2: pelicula = "El caballero de la noche";
-                break;
-            case 3: pelicula = "Pulp Fiction";
-                break;
-            case 4: pelicula = "La milla verde";
-                break;
-            case 5: pelicula = "Oppenheimer";
-                break;
-            default: pelicula = "No selecciono ninguna pelicula";
-                break;
-        }
-        alert("Termino " + pelicula);
-        cantPelis++;
-        seguir = confirm("Querés mirar otra pelicula?");
-    }
-    function seleccionarPeliAdul() {
-        seleccion = parseInt(prompt("Tenemos estos peliculas para vos!\n 1 Sueños de libertad\n 2 El caballero de la noche\n 3 Pulp Fiction\n 4 La milla verde\n 5 Oppenheimer\n Si queres mirar alguna solo tenes que ingresar el número que tiene al costado!"));
-    }
+        } else {
+            let filtrarGenero = prompt("Ingrese el género que desea mirar")
+            let filtrados = peliculasTodas.filter((el) => el.genero === filtrarGenero);
+            let peliculasFiltradas = [];
+            for (let i = 0; i < filtrados.length; i++) {
+                peliculasFiltradas.push(filtrados[i].titulo)
+            }
 
-    if (edad < 13) {
-        dashBoardInfantiles();
-        while (seguir) {
-            dashBoardInfantiles();
-        }
-    } else if (edad < 18) {
-        dashBoardAdolescentes();
-        while (seguir) {
-            dashBoardAdolescentes();
-        }
-    } else if (edad >= 18) {
-        dashBoardAdultos();
-        while (seguir) {
-            dashBoardAdultos();
+            if (peliculasFiltradas !== undefined) {
+                let elegirPelicula = prompt(peliculasFiltradas.join("\n"));
+            } else {
+                alert("No hay coincidencias con su búsqueda")
+            }
         }
     }
-
-    alert("El monto a abonar por " + cantPelis + " pelicula/s es $" + cantPelis * 2000 + "\nVolvé pronto!");
-
 } else {
     alert("Volvé pronto!");
 }
+
+
+
+/*   alert("El monto a abonar por " + cantPelis + " pelicula/s es $" + cantPelis * 2000 + "\nVolvé pronto!"); */
+
