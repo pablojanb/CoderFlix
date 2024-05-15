@@ -8,23 +8,23 @@ class Pelicula {
     }
 }
 
-const peli1 = new Pelicula("Toy Story", "John Lasseter", 81, "Tom Hanks, Tim Allen", "Animada");
-const peli2 = new Pelicula("Coco", "Lee Unkrich, Adrián Molina", 105, "Anthony Gonzalez, Gael García Bernal", "Animada");
-const peli3 = new Pelicula("Moana", "Ron Clements", 107, "Auli'i Cravalho, Dwayne Johnson", "Animada");
-const peli4 = new Pelicula("Spider-Man", "Jon Watts", 148, "Tom Holland, Zendaya", "Acción");
-const peli5 = new Pelicula("El Rey León", "Rob Minkoff", 88, "Matthew Broderick, James Earl Jones", "Animada");
+const peli1 = new Pelicula("TOY STORY", "JOHN LASSETER", 81, "TOM HANKS, TIM ALLEN", "ANIMADA");
+const peli2 = new Pelicula("COCO", "LEE UNKRICH, ADRIAN MOLINA", 105, "ANTHONY GONZALEZ, GAEL GARCIA BERNAL", "ANIMADA");
+const peli3 = new Pelicula("MOANA", "RON CLEMENTS", 107, "AULI'I CRAVALHO, DWAYNE JOHNSON", "ANIMADA");
+const peli4 = new Pelicula("SPIDER-MAN", "JON WATTS", 148, "TOM HOLLAND, ZENDAYA", "ACCION");
+const peli5 = new Pelicula("EL REY LEON", "ROB MINKOFF", 88, "MATTHEW BRODERICK, JAMES EARL JONES", "ANIMADA");
 
-const peli6 = new Pelicula("Super 8", "J. J. Abrams", 112, "Joel Courtney, Elle Fanning", "Aventura");
-const peli7 = new Pelicula("Barbie", "Greta Gerwig", 114, "Ryan Gosling, Margot Robbie", "Comedia");
-const peli8 = new Pelicula("Juno", "Jason Reitman", 96, "Ellen Page, Jennifer Garner", "Drama");
-const peli9 = new Pelicula("Chicas Pesadas", "Mark Waters", 97, "Lindsay Lohan, Rachel McAdams", "Comedia");
-const peli10 = new Pelicula("Soy Leyenda", "Francis Lawrence", 101, "Will Smith, Alice Braga", "Ciencia ficción");
+const peli6 = new Pelicula("SUPER 8", "J. J. ABRAMS", 112, "JOEL COURTNEY, ELLE FANNING", "AVENTURA");
+const peli7 = new Pelicula("BARBIE", "GRETA GERWIG", 114, "RYAN GOSLING, MARGOT ROBBIE", "COMEDIA");
+const peli8 = new Pelicula("JUNO", "JASON REITMAN", 96, "ELLEN PAGE, JENNIFER GARNER", "DRAMA");
+const peli9 = new Pelicula("CHICAS PESADAS", "MARK WATERS", 97, "LINDSAY LOHAN, RACHEL MCADAMS", "COMEDIA");
+const peli10 = new Pelicula("SOY LEYENDA", "FRANCIS LAWRENCE", 101, "WILL SMITH, ALICE BRAGA", "CIENCIA FICCION");
 
-const peli11 = new Pelicula("Escape a la libertad", "Frank Darabont", 142, "Tim Robbins, Morgan Freeman");
-const peli12 = new Pelicula("El caballero de la noche", "Christopher Nolan", 152, "Christian Bale, Michael Caine, Heath Ledger, Gary Oldman, Morgan Freeman", "Acción");
-const peli13 = new Pelicula("Pulp Fiction", "Quentin Tarantino", 154, "John Travolta, Samuel L. Jackson, Uma Thurman, Bruce Willis", "Drama");
-const peli14 = new Pelicula("Milagros inesperados", "Frank Darabont", 188, "Tom Hanks, Michael Clarke Duncan", "Drama");
-const peli15 = new Pelicula("Oppenheimer", "Christopher Nolan", 180, "Cillian Murphy, Emily Blunt Margot Robbie, Matt Damon", "Drama");
+const peli11 = new Pelicula("ESCAPE A LA LIBERTAD", "FRANK DARABONT", 142, "TIM ROBBINS, MORGAN FREEMAN");
+const peli12 = new Pelicula("EL CABALLERO DE LA NOCHE", "CHRISTOPHER NOLAN", 152, "CHRISTIAN BALE, MICHAEL CAINE, HEATH LEDGER, GARY OLDMAN, MORGAN FREEMAN", "ACCION");
+const peli13 = new Pelicula("PULP FICTION", "QUENTIN TARANTINO", 154, "JOHN TRAVOLTA, SAMUEL L. JACKSON, UMA THURMAN, BRUCE WILLIS", "DRAMA");
+const peli14 = new Pelicula("MILAGROS INESPERADOS", "FRANK DARABONT", 188, "TOM HANKS, MICHAEL CLARKE DUNCAN", "DRAMA");
+const peli15 = new Pelicula("OPPENHEIMER", "CHRISTOPHER NOLAN", 180, "CILLIAN MURPHY, EMILY BLUNT, MARGOT ROBBIE, MATT DAMON", "DRAMA");
 
 
 const peliculasInfantiles = [];
@@ -35,7 +35,7 @@ const peliculasTodas = [];
 peliculasInfantiles.push(peli1, peli2, peli3, peli4, peli5);
 peliculasAdolescentes.push(peli6, peli7, peli8, peli9, peli10);
 peliculasAdultos.push(peli11, peli12, peli13, peli14, peli15);
-peliculasTodas.push(peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15)
+peliculasTodas.push(peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15);
 
 
 alert("Bienvenido a CODERFLIX\nAcá vas a encontrar tus peliculas y series favoritas");
@@ -62,12 +62,12 @@ if (usuario != null) {
         pedirEdad();
     }
 
-    alert("Recorda que cada pelicula tiene un costo de $2000.-")
+    alert("Recorda que cada pelicula tiene un costo de $2000.-");
 
     let elegirPeli;
     do {
-        elegirPeli = prompt("1 Catalogo completo\n2 Infantiles\n3 Adolescentes\n4 Adultos\n5 Busqueda \n\nIngresa el numero que se corresponde con tu búsqueda.\nEj: Ingresa '4' Para seleccionar 'Adultos'")
-    } while (elegirPeli < 1 || elegirPeli > 5 || elegirPeli == "" || isNaN(elegirPeli))
+        elegirPeli = prompt("1 Catalogo completo\n2 Infantiles\n3 Adolescentes\n4 Adultos\n5 Busqueda \n\nIngresa el numero que se corresponde con tu búsqueda.\nEj: Ingresa '4' Para seleccionar 'Adultos'");
+    } while (elegirPeli < 1 || elegirPeli > 5 || elegirPeli == "" || isNaN(elegirPeli));
 
     let peliculaSeleccionada;
     let mostrarPeliculas = [];
@@ -78,16 +78,16 @@ if (usuario != null) {
             for (let i = 0; i < peliculasTodas.length; i++) {
                 mostrarPeliculas.push(peliculasTodas[i].titulo);
             }
-            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar").toUpperCase();
             while (peliculaSeleccionada === "" || peliculaSeleccionada === null) {
-                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar").toUpperCase();
             }
-            let peliculaElegida = peliculasTodas.find((el) => el.titulo === peliculaSeleccionada)
+            let peliculaElegida = peliculasTodas.find((el) => el.titulo === peliculaSeleccionada);
             if (peliculaElegida !== undefined) {
                 peliculasVistas++;
-                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?")
+                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?");
             } else {
-                alert("No hay coincidencias en su búsqueda")
+                alert("No hay coincidencias en su búsqueda");
             }
         } while (seguirMirando)
 
@@ -98,16 +98,16 @@ if (usuario != null) {
             for (let i = 0; i < peliculasInfantiles.length; i++) {
                 mostrarPeliculas.push(peliculasInfantiles[i].titulo);
             }
-            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar").toUpperCase();
             while (peliculaSeleccionada === "" || peliculaSeleccionada === null) {
-                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar").toUpperCase();
             }
-            let peliculaElegida = peliculasInfantiles.find((el) => el.titulo === peliculaSeleccionada)
+            let peliculaElegida = peliculasInfantiles.find((el) => el.titulo === peliculaSeleccionada);
             if (peliculaElegida !== undefined) {
                 peliculasVistas++;
-                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?")
+                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?");
             } else {
-                alert("No hay coincidencias en su búsqueda")
+                alert("No hay coincidencias en su búsqueda");
             }
         } while (seguirMirando)
     } else if (elegirPeli == 3) {
@@ -115,16 +115,16 @@ if (usuario != null) {
             for (let i = 0; i < peliculasAdolescentes.length; i++) {
                 mostrarPeliculas.push(peliculasAdolescentes[i].titulo);
             }
-            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar").toUpperCase();
             while (peliculaSeleccionada === "" || peliculaSeleccionada === null) {
-                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar").toUpperCase();
             }
-            let peliculaElegida = peliculasAdolescentes.find((el) => el.titulo === peliculaSeleccionada)
+            let peliculaElegida = peliculasAdolescentes.find((el) => el.titulo === peliculaSeleccionada);
             if (peliculaElegida !== undefined) {
                 peliculasVistas++;
-                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?")
+                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?");
             } else {
-                alert("No hay coincidencias en su búsqueda")
+                alert("No hay coincidencias en su búsqueda");
             }
         } while (seguirMirando)
 
@@ -133,77 +133,77 @@ if (usuario != null) {
             for (let i = 0; i < peliculasAdultos.length; i++) {
                 mostrarPeliculas.push(peliculasAdultos[i].titulo);
             }
-            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar").toUpperCase();
             while (peliculaSeleccionada === "" || peliculaSeleccionada === null) {
-                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar").toUpperCase();
             }
-            let peliculaElegida = peliculasAdultos.find((el) => el.titulo === peliculaSeleccionada)
+            let peliculaElegida = peliculasAdultos.find((el) => el.titulo === peliculaSeleccionada);
             if (peliculaElegida !== undefined) {
                 peliculasVistas++;
-                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?")
+                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?");
             } else {
-                alert("No hay coincidencias en su búsqueda")
+                alert("No hay coincidencias en su búsqueda");
             }
         } while (seguirMirando)
     } else {
-        let buscarPor = prompt("1 Director\n2 Genero")
-        let elegirPelicula
+        let buscarPor = prompt("1 Director\n2 Genero");
+        let elegirPelicula;
         if (buscarPor == 1) {
             do {
-                let filtrarDirector = prompt("Ingrese el director que desea buscar")
+                let filtrarDirector = prompt("Ingrese el director que desea buscar").toUpperCase();
                 let filtrados = peliculasTodas.filter((el) => el.director === filtrarDirector);
                 while (filtrados.length === 0) {
-                    let filtrarDirector = prompt("No hubo coincidencia, intente nuevamente")
+                    let filtrarDirector = prompt("No hubo coincidencia, intente nuevamente").toUpperCase();
                     filtrados = peliculasTodas.filter((el) => el.director === filtrarDirector);
                 }
                 let peliculasFiltradas = [];
                 for (let i = 0; i < filtrados.length; i++) {
-                    peliculasFiltradas.push(filtrados[i].titulo)
+                    peliculasFiltradas.push(filtrados[i].titulo);
                 }
 
                 if (peliculasFiltradas !== undefined) {
-                    elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar");
+                    elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar").toUpperCase();
                     while (elegirPelicula === "" || elegirPelicula === null) {
-                        elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar");
+                        elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar").toUpperCase();
                     }
                 } else {
-                    alert("No hay coincidencias con su búsqueda")
+                    alert("No hay coincidencias con su búsqueda");
                 }
                 if (peliculasFiltradas.find((el) => el === elegirPelicula)) {
                     peliculasVistas++;
-                    seguirMirando = confirm("Termino " + elegirPelicula + " \nQuéres seguir mirando?")
+                    seguirMirando = confirm("Termino " + elegirPelicula + " \nQuéres seguir mirando?");
                 } else {
-                    alert("No hay coincidencia con su búsqueda")
+                    alert("No hay coincidencia con su búsqueda");
                 }
 
             } while (seguirMirando)
         } else {
-            let elegirPelicula
+            let elegirPelicula;
             do {
-                let filtrarGenero = prompt("Ingrese el género que desea mirar")
+                let filtrarGenero = prompt("Ingrese el género que desea mirar").toUpperCase();
                 let filtrados = peliculasTodas.filter((el) => el.genero === filtrarGenero);
                 while (filtrados.length === 0) {
-                    filtrarGenero = prompt("No hubo coincidencia, intente nuevamente")
+                    filtrarGenero = prompt("No hubo coincidencia, intente nuevamente").toUpperCase();
                     filtrados = peliculasTodas.filter((el) => el.genero === filtrarGenero);
                 }
                 let peliculasFiltradas = [];
                 for (let i = 0; i < filtrados.length; i++) {
-                    peliculasFiltradas.push(filtrados[i].titulo)
+                    peliculasFiltradas.push(filtrados[i].titulo);
                 }
 
                 if (peliculasFiltradas !== undefined) {
-                    elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\nIngrese la pelicula que desea mirar");
+                    elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\nIngrese la pelicula que desea mirar").toUpperCase();
                     while (elegirPelicula === "" || elegirPelicula === null) {
-                        elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar");
+                        elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar").toUpperCase();
                     }
                 } else {
-                    alert("No hay coincidencias con su búsqueda")
+                    alert("No hay coincidencias con su búsqueda");
                 }
                 if ((peliculasFiltradas.find((el) => el === elegirPelicula))) {
                     peliculasVistas++;
-                    seguirMirando = confirm("Termino " + elegirPelicula + " \nQuéres seguir mirando?")
+                    seguirMirando = confirm("Termino " + elegirPelicula + " \nQuéres seguir mirando?");
                 } else {
-                    alert("No hay coincidencia con su búsqueda")
+                    alert("No hay coincidencia con su búsqueda");
                 }
 
             } while (seguirMirando)
@@ -211,9 +211,9 @@ if (usuario != null) {
     }
     if (peliculasVistas != 0) {
         if (peliculasVistas == 1) {
-            alert("El monto a abonar por " + peliculasVistas + " pelicula es de: $" + peliculasVistas * 2000 + "\nVolvé pronto!")
+            alert("El monto a abonar por " + peliculasVistas + " pelicula es de: $" + peliculasVistas * 2000 + "\nVolvé pronto!");
         } else {
-            alert("El monto a abonar por " + peliculasVistas + " peliculas es de: $" + peliculasVistas * 2000 + "\nVolvé pronto!")
+            alert("El monto a abonar por " + peliculasVistas + " peliculas es de: $" + peliculasVistas * 2000 + "\nVolvé pronto!");
         }
     }
 } else {
