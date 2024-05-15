@@ -71,58 +71,86 @@ if (usuario != null) {
 
     let peliculaSeleccionada;
     let mostrarPeliculas = [];
+    let seguirMirando = true;
+    let peliculasVistas = 0;
     if (elegirPeli == 1) {
-        for (let i = 0; i < peliculasTodas.length; i++) {
-            mostrarPeliculas.push(peliculasTodas[i].titulo);
-        }
-        peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
-        let peliculaElegida = peliculasTodas.find((el) => el.titulo === peliculaSeleccionada)
-        if (peliculaElegida !== undefined) {
-            console.log(peliculaElegida)
-        } else {
-            console.log("No hay coincidencias en su búsqueda")
-        }
+        do {
+            for (let i = 0; i < peliculasTodas.length; i++) {
+                mostrarPeliculas.push(peliculasTodas[i].titulo);
+            }
+            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            while (peliculaSeleccionada === "" || peliculaSeleccionada === null) {
+                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            }
+            let peliculaElegida = peliculasTodas.find((el) => el.titulo === peliculaSeleccionada)
+            if (peliculaElegida !== undefined) {
+                peliculasVistas++;
+                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?")
+            } else {
+                alert("No hay coincidencias en su búsqueda")
+            }
+        } while(seguirMirando)
 
 
 
     } else if (elegirPeli == 2) {
-        for (let i = 0; i < peliculasInfantiles.length; i++) {
-            mostrarPeliculas.push(peliculasInfantiles[i].titulo);
-        }
-        peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
-        let peliculaElegida = peliculasInfantiles.find((el) => el.titulo === peliculaSeleccionada)
-        if (peliculaElegida !== undefined) {
-            console.log(peliculaElegida)
-        } else {
-            console.log("No hay coincidencias en su búsqueda")
-        }
+        do {
+            for (let i = 0; i < peliculasInfantiles.length; i++) {
+                mostrarPeliculas.push(peliculasInfantiles[i].titulo);
+            }
+            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            while (peliculaSeleccionada === "" || peliculaSeleccionada === null) {
+                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            }
+            let peliculaElegida = peliculasInfantiles.find((el) => el.titulo === peliculaSeleccionada)
+            if (peliculaElegida !== undefined) {
+                peliculasVistas++;
+                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?")
+            } else {
+                alert("No hay coincidencias en su búsqueda")
+            }
+        } while (seguirMirando)
     } else if (elegirPeli == 3) {
-        for (let i = 0; i < peliculasAdolescentes.length; i++) {
-            mostrarPeliculas.push(peliculasAdolescentes[i].titulo);
-        }
-        peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
-        let peliculaElegida = peliculasAdolescentes.find((el) => el.titulo === peliculaSeleccionada)
-        if (peliculaElegida !== undefined) {
-            console.log(peliculaElegida)
-        } else {
-            console.log("No hay coincidencias en su búsqueda")
-        }
+        do {
+            for (let i = 0; i < peliculasAdolescentes.length; i++) {
+                mostrarPeliculas.push(peliculasAdolescentes[i].titulo);
+            }
+            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            while (peliculaSeleccionada === "" || peliculaSeleccionada === null) {
+                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            }
+            let peliculaElegida = peliculasAdolescentes.find((el) => el.titulo === peliculaSeleccionada)
+            if (peliculaElegida !== undefined) {
+                peliculasVistas++;
+                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?")
+            } else {
+                alert("No hay coincidencias en su búsqueda")
+            }
+        } while (seguirMirando)
 
     } else if (elegirPeli == 4) {
-        for (let i = 0; i < peliculasAdultos.length; i++) {
-            mostrarPeliculas.push(peliculasAdultos[i].titulo);
-        }
-        peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
-        let peliculaElegida = peliculasAdultos.find((el) => el.titulo === peliculaSeleccionada)
-        if (peliculaElegida !== undefined) {
-            console.log(peliculaElegida)
-        } else {
-            console.log("No hay coincidencias en su búsqueda")
-        }
+        do {
+            for (let i = 0; i < peliculasAdultos.length; i++) {
+                mostrarPeliculas.push(peliculasAdultos[i].titulo);
+            }
+            peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            while (peliculaSeleccionada === "" || peliculaSeleccionada === null) {
+                peliculaSeleccionada = prompt(mostrarPeliculas.join("\n") + "\n\nIngrese el titulo que desea mirar");
+            }
+            let peliculaElegida = peliculasAdultos.find((el) => el.titulo === peliculaSeleccionada)
+            if (peliculaElegida !== undefined) {
+                peliculasVistas++;
+                seguirMirando = confirm("Termino " + peliculaElegida.titulo + " \nQuéres seguir mirando?")
+            } else {
+                alert("No hay coincidencias en su búsqueda")
+            }
+        } while (seguirMirando)
     } else {
         let buscarPor = prompt("1 Director\n2 Genero")
+        let elegirPelicula
         if (buscarPor == 1) {
-            let filtrarDirector = prompt("Ingrese el director que desea buscar")
+            do {
+                let filtrarDirector = prompt("Ingrese el director que desea buscar")
             let filtrados = peliculasTodas.filter((el) => el.director === filtrarDirector);
             let peliculasFiltradas = [];
             for (let i = 0; i < filtrados.length; i++) {
@@ -130,13 +158,19 @@ if (usuario != null) {
             }
 
             if (peliculasFiltradas !== undefined) {
-                let elegirPelicula = prompt(peliculasFiltradas.join("\n"));
+                elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar");
+                while (elegirPelicula === "" || elegirPelicula === null) {
+                    elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar");
+                }
             } else {
                 alert("No hay coincidencias con su búsqueda")
             }
-
+            peliculasVistas++;
+            seguirMirando = confirm("Termino " + elegirPelicula + " \nQuéres seguir mirando?")
+            } while (seguirMirando)
         } else {
-            let filtrarGenero = prompt("Ingrese el género que desea mirar")
+            do {
+                let filtrarGenero = prompt("Ingrese el género que desea mirar")
             let filtrados = peliculasTodas.filter((el) => el.genero === filtrarGenero);
             let peliculasFiltradas = [];
             for (let i = 0; i < filtrados.length; i++) {
@@ -144,11 +178,21 @@ if (usuario != null) {
             }
 
             if (peliculasFiltradas !== undefined) {
-                let elegirPelicula = prompt(peliculasFiltradas.join("\n"));
+                let elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\nIngrese la pelicula que desea mirar");
+                seguirMirando = confirm("Termino " + elegirPelicula + " \nQuéres seguir mirando?")
+                while (elegirPelicula === "" || elegirPelicula === null) {
+                    elegirPelicula = prompt(peliculasFiltradas.join("\n") + "\n\nIngrese la pelicula que desea mirar");
+                }
             } else {
                 alert("No hay coincidencias con su búsqueda")
             }
+            peliculasVistas++;
+            seguirMirando = confirm("Termino " + elegirPelicula + " \nQuéres seguir mirando?")
+            } while (seguirMirando)
         }
+    }
+    if (peliculasVistas != 0) {
+        alert("Miraste" + peliculasVistas)
     }
 } else {
     alert("Volvé pronto!");
