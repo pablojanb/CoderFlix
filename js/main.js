@@ -180,7 +180,7 @@ if (usuario != null) {
         } else {
             let elegirPelicula;
             do {
-                let filtrarGenero = prompt("Ingrese el género que desea mirar").toUpperCase();
+                let filtrarGenero = prompt("Ingrese el género que desea mirar\n\nPor ej: Acción, aventura, drama, comedia, animada, ciencia ficción").toUpperCase();
                 let filtrados = peliculasTodas.filter((el) => el.genero === filtrarGenero);
                 while (filtrados.length === 0) {
                     filtrarGenero = prompt("No hubo coincidencia, intente nuevamente").toUpperCase();
