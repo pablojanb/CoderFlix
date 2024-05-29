@@ -33,6 +33,13 @@ nav ul {
   border: none;
   background-color: transparent;
   font-size: 16px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.btnCategoria:hover {
+  border-bottom: 1px solid orange;
+  transform: scale(1.2);
 }
 
 .main {
@@ -50,8 +57,17 @@ nav ul {
 }
 
 .buscadorPelicula {
+  text-align: center;
   width: 40%;
   margin-bottom: 80px;
+  border: 1px solid white;
+  font-weight: normal;
+}
+
+.buscadorPelicula:focus {
+  border: 1px solid orange;
+  outline: none;
+  font-weight: normal;
 }
 
 .grilla {
@@ -80,7 +96,8 @@ nav ul {
   color: black;
   text-transform: uppercase;
   font-size: 16px;
-  letter-spacing: 1px
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .btnMirar:hover {
