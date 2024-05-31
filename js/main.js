@@ -30,7 +30,9 @@ const peli15 = new Pelicula(15, "oppenheimer", "christopher nolan", 180, "cillia
 
 let grillaPeliculas = document.getElementById("grillaPeliculas");
 
-const peliculas = [peli1,peli2, peli3, peli4, peli5, peli6, peli7,peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15]
+const peliculas = [peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15]
+
+peliculas.forEach((e) => crearPeliDom(e));
 
 function crearPeliDom(pel) {
     let div = document.createElement("div");
@@ -45,12 +47,22 @@ function crearPeliDom(pel) {
 }
 
 
-function displayPelis(x) {
-    x.forEach((e) => {
-        crearPeliDom(e) 
-    });
-} 
 
 
+function displayPelis(e) {
+    grillaPeliculas.innerHTML = "";
+    const pelisFitro = peliculas.filter((el)=> el.genero === e.target.id);
+    if (e.target.id==="todas") {
+        peliculas.forEach((e) => crearPeliDom(e));
+    } else {
+        pelisFitro.forEach((e) => crearPeliDom(e));
+    }
+}
 
-displayPelis(peliculas);
+
+const boton = document.getElementById("todas");
+boton.addEventListener("click", displayPelis);
+
+
+const botonesGenero = document.querySelectorAll(".btnGenero");
+botonesGenero.forEach((el) => el.addEventListener("click", displayPelis));
