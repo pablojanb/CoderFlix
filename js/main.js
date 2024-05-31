@@ -99,7 +99,7 @@ function filtrarPorBuscador(e) {
 // formulario ingreso
 
 const formulario = document.getElementById("formulario");
-const nombreUsuario = document.getElementById("nombreUsuario");
+let nombreUsuario = document.getElementById("nombreUsuario");
 const ingreso = document.querySelector(".ingreso");
 const titulo = document.querySelector(".titulo");
 const main = document.querySelector(".main");
@@ -133,19 +133,24 @@ invitado.addEventListener("click", () => {
 
 let nombreUsuarioLS = localStorage.getItem("nombreUsuario")
 if (nombreUsuarioLS) {
-    const nombreUsuario = nombreUsuarioLS;
+    nombreUsuario.value = nombreUsuarioLS;
     encabezado.classList.remove("ocultar");
-    titulo.innerText = `Bienvenido ${nombreUsuario}`
+    titulo.innerText = `Bienvenido ${nombreUsuario.value}`
     ingreso.classList.add("ocultar")
     main.classList.remove("ocultar")
     btnSalir.classList.remove("ocultar")
 }
 
 btnSalir.addEventListener("click", () => {
+    let checkout = confirm("¿Esta seguro que desea salir?")
+    checkout && salir();
+})
+
+function salir() {
     titulo.innerText = `Hasta pronto ${nombreUsuario.value}!`;
     localStorage.removeItem("nombreUsuario");
     encabezado.classList.add("ocultar");
     ingreso.classList.remove("ocultar");
     main.classList.add("ocultar");
     btnSalir.classList.add("ocultar")
-})
+}
