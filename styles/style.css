@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 /* .anton-regular {
   font-family: "Anton", sans-serif;
@@ -6,21 +6,29 @@
   font-style: normal;
 } */
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Anton", sans-serif;
-    background-color: black;
-    color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Anton", sans-serif;
+  background-color: black;
+  color: white;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+.logo {
+  font-size: 20px;
+}
+
+.logo span {
+  color: orange;
 }
 
 nav ul {
@@ -29,7 +37,7 @@ nav ul {
   gap: 30px;
 }
 
-.btnCategoria {
+.btnMenu {
   border: none;
   background-color: transparent;
   font-size: 16px;
@@ -37,9 +45,21 @@ nav ul {
   cursor: pointer;
 }
 
-.btnCategoria:hover {
+.btnCarrito i {
+  color: orange;
+}
+
+.btnMenu:hover {
   border-bottom: 1px solid orange;
   transform: scale(1.2);
+}
+
+.btnCarrito {
+  border: none;
+}
+
+.btnCarrito:hover {
+  border: none;
 }
 
 .main {
@@ -57,6 +77,7 @@ nav ul {
 }
 
 .buscadorPelicula {
+  font-size: 20px;
   text-align: center;
   width: 40%;
   margin-bottom: 80px;
@@ -85,6 +106,7 @@ nav ul {
 
 .imagenPeli {
   max-width: 100%;
+  max-height: 430px;
 }
 
 .btnMirar {
@@ -98,6 +120,7 @@ nav ul {
   font-size: 16px;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: all .3s;
 }
 
 .btnMirar:hover {

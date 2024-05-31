@@ -1,28 +1,56 @@
 class Pelicula {
-    constructor(titulo, director, duracion, reparto, genero) {
+    constructor(id, titulo, director, duracion, reparto, genero, poster) {
+        this.id = id;
         this.titulo = titulo;
         this.director = director;
         this.duracion = duracion;
         this.reparto = reparto;
         this.genero = genero;
+        this.poster = poster;
     }
 }
 
-const peli1 = new Pelicula("TOY STORY", "JOHN LASSETER", 81, "TOM HANKS, TIM ALLEN", "ANIMADA");
-const peli2 = new Pelicula("COCO", "LEE UNKRICH, ADRIAN MOLINA", 105, "ANTHONY GONZALEZ, GAEL GARCIA BERNAL", "ANIMADA");
-const peli3 = new Pelicula("MOANA", "RON CLEMENTS", 107, "AULI'I CRAVALHO, DWAYNE JOHNSON", "ANIMADA");
-const peli4 = new Pelicula("SPIDER-MAN", "JON WATTS", 148, "TOM HOLLAND, ZENDAYA", "ACCION");
-const peli5 = new Pelicula("EL REY LEON", "ROB MINKOFF", 88, "MATTHEW BRODERICK, JAMES EARL JONES", "ANIMADA");
+const peli1 = new Pelicula(1, "toy story", "john lasseter", 81, "tom hanks, tim allen", "animada", "images/toystory_poster.webp");
+const peli2 = new Pelicula(2, "coco", "lee unkrich, adrian molina", 105, "anthony gonzalez, gael garcia bernal", "animada", "images/coco_poster.webp");
+const peli3 = new Pelicula(3, "moana", "ron clements", 107, "auli'i cravalho, dwayne johnson", "animada", "images/moana_poster.webp");
+const peli4 = new Pelicula(4, "spider-man", "jon watts", 148, "tom holland, zendaya", "accion", "images/spiderman_poster.webp");
+const peli5 = new Pelicula(5, "el rey leon", "rob minkoff", 88, "matthew broderick, james earl jones", "animada", "images/elreyleon_poster.webp");
 
-const peli6 = new Pelicula("SUPER 8", "J. J. ABRAMS", 112, "JOEL COURTNEY, ELLE FANNING", "AVENTURA");
-const peli7 = new Pelicula("BARBIE", "GRETA GERWIG", 114, "RYAN GOSLING, MARGOT ROBBIE", "COMEDIA");
-const peli8 = new Pelicula("JUNO", "JASON REITMAN", 96, "ELLEN PAGE, JENNIFER GARNER", "DRAMA");
-const peli9 = new Pelicula("CHICAS PESADAS", "MARK WATERS", 97, "LINDSAY LOHAN, RACHEL MCADAMS", "COMEDIA");
-const peli10 = new Pelicula("SOY LEYENDA", "FRANCIS LAWRENCE", 101, "WILL SMITH, ALICE BRAGA", "CIENCIA FICCION");
+const peli6 = new Pelicula(6, "super 8", "j. j. abrams", 112, "joel courtney, elle fanning", "aventura", "images/super8_poster.webp");
+const peli7 = new Pelicula(7, "barbie", "greta gerwig", 114, "ryan gosling, margot robbie", "comedia", "images/barbie_poster.webp");
+const peli8 = new Pelicula(8, "juno", "jason reitman", 96, "ellen page, jannifer garner", "drama", "images/juno_poster.webp");
+const peli9 = new Pelicula(9, "chicas pesadas", "mark waters", 97, "lindsay lohan, rachel mcadams", "comedia", "images/meangirls_poster.webp");
+const peli10 = new Pelicula(10, "soy leyenda", "francis lawrence", 101, "will smith, alice braga", "ciencia ficcion", "images/soyleyenda_poster.webp");
 
-const peli11 = new Pelicula("ESCAPE A LA LIBERTAD", "FRANK DARABONT", 142, "TIM ROBBINS, MORGAN FREEMAN", "DRAMA");
-const peli12 = new Pelicula("EL CABALLERO DE LA NOCHE", "CHRISTOPHER NOLAN", 152, "CHRISTIAN BALE, MICHAEL CAINE, HEATH LEDGER, GARY OLDMAN, MORGAN FREEMAN", "ACCION");
-const peli13 = new Pelicula("PULP FICTION", "QUENTIN TARANTINO", 154, "JOHN TRAVOLTA, SAMUEL L. JACKSON, UMA THURMAN, BRUCE WILLIS", "DRAMA");
-const peli14 = new Pelicula("MILAGROS INESPERADOS", "FRANK DARABONT", 188, "TOM HANKS, MICHAEL CLARKE DUNCAN", "DRAMA");
-const peli15 = new Pelicula("OPPENHEIMER", "CHRISTOPHER NOLAN", 180, "CILLIAN MURPHY, EMILY BLUNT, MARGOT ROBBIE, MATT DAMON", "DRAMA");
+const peli11 = new Pelicula(11, "escape a la libertad", "frank darabont", 142, "tim robbins, morgan freeman", "drama", "images/shawshank_redemption_poster.webp");
+const peli12 = new Pelicula(12, "el caballero de la noche", "christopher nolan", 152, "christian bale, michael caine, heath ledger, gary oldman, morgan freeman", "accion", "images/elcaballerooscuro_poster.webp");
+const peli13 = new Pelicula(13, "pulp fiction", "quentin tarantino", 154, "john travolta, samuel l. jackson, uma thurman, bruce willis", "drama", "images/pulpfiction__poster.webp");
+const peli14 = new Pelicula(14, "milagros inesperados", "frank darabont", 188, "tom hanks, michael clarke duncan", "drama", "images/milagrosinesperados_poster.webp");
+const peli15 = new Pelicula(15, "oppenheimer", "christopher nolan", 180, "cillian murphy, emily blunt, margot robbie, matt damon", "drama", "images/oppenheimer_poster.webp");
 
+let grillaPeliculas = document.getElementById("grillaPeliculas");
+
+const peliculas = [peli1,peli2, peli3, peli4, peli5, peli6, peli7,peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15]
+
+function crearPeliDom(pel) {
+    let div = document.createElement("div");
+    div.className = "pelicula";
+    div.innerHTML = `
+        <img class="imagenPeli" src="${pel.poster}" alt="">
+        <div>
+            <button class="btnMirar">Mirar</button>
+        </div>
+`;
+    grillaPeliculas.append(div);
+}
+
+
+function displayPelis(x) {
+    x.forEach((e) => {
+        crearPeliDom(e) 
+    });
+} 
+
+
+
+displayPelis(peliculas);
