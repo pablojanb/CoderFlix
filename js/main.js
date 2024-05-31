@@ -88,4 +88,5 @@ function filtrarPorBuscador(e) {
     let filtrar = e.target.value;
     const pelisFiltradas = peliculas.filter((e)=>e.titulo.toUpperCase().includes(filtrar.toUpperCase()));
     pelisFiltradas.forEach((e) => crearPeliDom(e));
+    agregarBotones();
 }
