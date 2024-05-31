@@ -86,7 +86,7 @@ buscadorPelicula.addEventListener("input", filtrarPorBuscador)
 function filtrarPorBuscador(e) {
     grillaPeliculas.innerHTML = "";
     let filtrar = e.target.value;
-    const pelisFiltradas = peliculas.filter((e)=>e.titulo.toUpperCase().includes(filtrar.toUpperCase()));
+    const pelisFiltradas = peliculas.filter((e)=>e.titulo.toUpperCase().trim().includes(filtrar.toUpperCase().trim()));
     pelisFiltradas.forEach((e) => crearPeliDom(e));
     agregarBotones();
 }
