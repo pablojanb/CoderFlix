@@ -52,8 +52,8 @@ function crearPeliDom(pel) {
 
 function displayPelis(e) {
     grillaPeliculas.innerHTML = "";
-    const pelisFitro = peliculas.filter((el)=> el.genero === e.target.id);
-    if (e.target.id==="todas") {
+    const pelisFitro = peliculas.filter((el) => el.genero === e.target.id);
+    if (e.target.id === "todas") {
         peliculas.forEach((e) => crearPeliDom(e));
         agregarBotones();
     } else {
@@ -68,8 +68,8 @@ botonesGenero.forEach((el) => el.addEventListener("click", displayPelis));
 
 function agregarBotones() {
     const botonMirar = document.querySelectorAll(".btnMirar");
-    botonMirar.forEach((e)=>e.addEventListener("click", reproducir));
-    
+    botonMirar.forEach((e) => e.addEventListener("click", reproducir));
+
     function reproducir() {
         alert("peli");
     }
@@ -86,7 +86,42 @@ buscadorPelicula.addEventListener("input", filtrarPorBuscador)
 function filtrarPorBuscador(e) {
     grillaPeliculas.innerHTML = "";
     let filtrar = e.target.value;
-    const pelisFiltradas = peliculas.filter((e)=>e.titulo.toUpperCase().trim().includes(filtrar.toUpperCase().trim()));
+    const pelisFiltradas = peliculas.filter((e) => e.titulo.toUpperCase().trim().includes(filtrar.toUpperCase().trim()));
     pelisFiltradas.forEach((e) => crearPeliDom(e));
     agregarBotones();
+}
+
+// formulario ingreso
+
+const formulario = document.getElementById("formulario");
+const nombreUsuario = document.getElementById("nombreUsuario");
+const ingreso = document.querySelector(".ingreso");
+const titulo = document.querySelector(".titulo");
+const main = document.querySelector(".main");
+formulario.addEventListener("click", validar);
+const invitado = document.querySelector(".invitado");
+
+function validar(e) {
+    e.preventDefault();
+    if (nombreUsuario.value) {
+        titulo.innerText = `Bienvenido ${nombreUsuario.value}`
+        ingreso.classList.add("ocultar")
+        main.classList.remove("ocultar")
+        recordarNombre = confirm("¿Desea recordar su nombre?")
+        if (recordarNombre) {
+            localStorage.setItem("nombreUsuario", nombreUsuario.value)
+        }
+    }
+}
+
+invitado.addEventListener("click", () => {titulo.innerText = "Bienvenido!";
+ingreso.classList.add("ocultar");
+main.classList.remove("ocultar")})
+
+let nombreUsuarioLS = localStorage.getItem("nombreUsuario")
+if (nombreUsuarioLS) {
+    const nombreUsuario = nombreUsuarioLS;
+    titulo.innerText = `Bienvenido ${nombreUsuario}`
+    ingreso.classList.add("ocultar")
+    main.classList.remove("ocultar")
 }
