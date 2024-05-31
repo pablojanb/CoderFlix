@@ -100,6 +100,8 @@ const titulo = document.querySelector(".titulo");
 const main = document.querySelector(".main");
 formulario.addEventListener("click", validar);
 const invitado = document.querySelector(".invitado");
+const btnSalir = document.querySelector(".btnSalir");
+const encabezado = document.querySelector(".encabezado");
 
 function validar(e) {
     e.preventDefault();
@@ -107,21 +109,40 @@ function validar(e) {
         titulo.innerText = `Bienvenido ${nombreUsuario.value}`
         ingreso.classList.add("ocultar")
         main.classList.remove("ocultar")
+        encabezado.classList.remove("ocultar")
         recordarNombre = confirm("¿Desea recordar su nombre?")
         if (recordarNombre) {
             localStorage.setItem("nombreUsuario", nombreUsuario.value)
+            btnSalir.classList.remove("ocultar")
         }
     }
 }
 
 invitado.addEventListener("click", () => {titulo.innerText = "Bienvenido!";
 ingreso.classList.add("ocultar");
-main.classList.remove("ocultar")})
+main.classList.remove("ocultar");
+encabezado.classList.remove("ocultar")}
+)
 
 let nombreUsuarioLS = localStorage.getItem("nombreUsuario")
 if (nombreUsuarioLS) {
     const nombreUsuario = nombreUsuarioLS;
+    encabezado.classList.remove("ocultar");
     titulo.innerText = `Bienvenido ${nombreUsuario}`
     ingreso.classList.add("ocultar")
     main.classList.remove("ocultar")
+    btnSalir.classList.remove("ocultar")
 }
+
+btnSalir.addEventListener("click", ()=>{
+titulo.innerText = `Hasta pronto ${nombreUsuario.value}!`;
+localStorage.removeItem("nombreUsuario");
+encabezado.classList.add("ocultar");
+    ingreso.classList.remove("ocultar");
+    main.classList.add("ocultar");
+    btnSalir.classList.add("ocultar")
+})
+
+
+
+    

@@ -45,7 +45,7 @@ nav ul {
   cursor: pointer;
 }
 
-.btnCarrito i {
+.btnSalir i {
   color: orange;
 }
 
@@ -54,11 +54,11 @@ nav ul {
   transform: scale(1.2);
 }
 
-.btnCarrito {
+.btnSalir {
   border: none;
 }
 
-.btnCarrito:hover {
+.btnSalir:hover {
   border: none;
 }
 
