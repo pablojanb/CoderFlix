@@ -30,9 +30,10 @@ const peli15 = new Pelicula(15, "oppenheimer", "christopher nolan", 180, "cillia
 
 let grillaPeliculas = document.getElementById("grillaPeliculas");
 
-const peliculas = [peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15]
+const peliculas = [peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15];
 
 peliculas.forEach((e) => crearPeliDom(e));
+agregarBotones();
 
 function crearPeliDom(pel) {
     let div = document.createElement("div");
@@ -54,15 +55,37 @@ function displayPelis(e) {
     const pelisFitro = peliculas.filter((el)=> el.genero === e.target.id);
     if (e.target.id==="todas") {
         peliculas.forEach((e) => crearPeliDom(e));
+        agregarBotones();
     } else {
         pelisFitro.forEach((e) => crearPeliDom(e));
+        agregarBotones();
+    }
+}
+
+const botonesGenero = document.querySelectorAll(".btnGenero");
+botonesGenero.forEach((el) => el.addEventListener("click", displayPelis));
+
+
+function agregarBotones() {
+    const botonMirar = document.querySelectorAll(".btnMirar");
+    botonMirar.forEach((e)=>e.addEventListener("click", reproducir));
+    
+    function reproducir() {
+        alert("peli");
     }
 }
 
 
-const boton = document.getElementById("todas");
-boton.addEventListener("click", displayPelis);
 
 
-const botonesGenero = document.querySelectorAll(".btnGenero");
-botonesGenero.forEach((el) => el.addEventListener("click", displayPelis));
+const buscadorPelicula = document.getElementById("buscadorPelicula");
+
+buscadorPelicula.addEventListener("input", filtrarPorBuscador)
+
+
+function filtrarPorBuscador(e) {
+    grillaPeliculas.innerHTML = "";
+    let filtrar = e.target.value;
+    const pelisFiltradas = peliculas.filter((e)=>e.titulo.includes(filtrar));
+    pelisFiltradas.forEach((e) => crearPeliDom(e));
+}
