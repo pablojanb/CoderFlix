@@ -13,40 +13,42 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title>CODERFLIX</title>
   </head>
-  <body>
-    <header class="encabezado ocultar">
-      <div class="logo">Coder<span>Flix</span></div>
-      <nav>
-        <ul>
-          <li><button id="todas" class="btnMenu btnGenero">Todas</button></li>
-          <li><button id="drama" class="btnMenu btnGenero" id="hola">Drama</button></li>
-          <li><button id="aventura" class="btnMenu btnGenero">Aventura</button></li>
-          <li><button id="accion" class="btnMenu btnGenero">Acción</button></li>
-          <li><button id="comedia" class="btnMenu btnGenero">Comedia</button></li>
-          <li><button id="ciencia ficcion" class="btnMenu btnGenero">Ciencia Ficción</button></li>
-          <li><button id="animada" class="btnMenu btnGenero">Animada</button></li>
-          <li><button class="btnMenu btnSalir ocultar"><i class="fa-solid fa-arrow-right-to-bracket"></i></button></li>
-        </ul>
-      </nav>
-    </header>
-    <h1 class="titulo">Bienvenido a CoderFlix</h1>
-    <section class="ingreso">
-      <form action="" class="formulario" id="formulario">
-          <input id="nombreUsuario" type="text" placeholder="John Doe">
-          <input type="submit" class=" btnIngreso" value="Ingresar">
-      </form>
-      <button class="invitado btnIngreso">Ingresar como invitado</button>
-    </section>
-    <section class="main ocultar">
-      <input
-        type="text" name="" id="buscadorPelicula" class="buscadorPelicula" placeholder="Ingresa el titulo que deseas mirar"/>
-      <div class="grilla" id="grillaPeliculas">
-
-      </div>
-    </section>
-    <footer>
-      <p class="copyright">CoderFlix© todos los derechos reservados</p>
-    </footer>
+  <body class="body">
+    <div class="contenedor">
+      <header class="encabezado ocultar">
+        <div class="logo">Coder<span>Flix</span></div>
+        <nav>
+          <ul>
+            <li><button id="todas" class="btnMenu btnGenero">Todas</button></li>
+            <li><button id="drama" class="btnMenu btnGenero" id="hola">Drama</button></li>
+            <li><button id="aventura" class="btnMenu btnGenero">Aventura</button></li>
+            <li><button id="accion" class="btnMenu btnGenero">Acción</button></li>
+            <li><button id="comedia" class="btnMenu btnGenero">Comedia</button></li>
+            <li><button id="ciencia ficcion" class="btnMenu btnGenero">Ciencia Ficción</button></li>
+            <li><button id="animada" class="btnMenu btnGenero">Animada</button></li>
+            <li><button class="btnMenu btnSalir ocultar"><i class="fa-solid fa-arrow-right-to-bracket"></i></button></li>
+          </ul>
+        </nav>
+      </header>
+      <h1 class="titulo">Bienvenido a CoderFlix</h1>
+      <section class="ingreso">
+        <form action="" class="formulario" id="formulario">
+            <input id="nombreUsuario" type="text" placeholder="John Doe">
+            <input type="submit" class=" btnIngreso" value="Ingresar">
+        </form>
+        <button class="invitado btnIngreso">Ingresar como invitado</button>
+      </section>
+      <section class="main ocultar">
+        <input
+          type="text" name="" id="buscadorPelicula" class="buscadorPelicula" placeholder="Ingresa el titulo que deseas mirar"/>
+        <div class="grilla" id="grillaPeliculas">
+  
+        </div>
+      </section>
+      <footer>
+        <p class="copyright">CoderFlix© todos los derechos reservados</p>
+      </footer>
+    </div>
 
     <script src="js/main.js"></script>
   </body>

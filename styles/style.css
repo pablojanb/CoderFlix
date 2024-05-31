@@ -173,3 +173,7 @@ footer {
 .ocultar {
   display: none;
 }
+
+.contenedor {
+  height: 100vw;
+}
