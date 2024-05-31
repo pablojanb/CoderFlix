@@ -142,7 +142,3 @@ encabezado.classList.add("ocultar");
     main.classList.add("ocultar");
     btnSalir.classList.add("ocultar")
 })
-
-
-
-    

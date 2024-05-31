@@ -158,6 +158,14 @@ footer {
   text-align: center;
 }
 
+.invitado {
+  padding: 0 78px;
+}
+
+.btnIngreso {
+  transition: all 0.3s;
+}
+
 .btnIngreso:hover {
   background-color: orange;
 }
