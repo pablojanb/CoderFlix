@@ -74,11 +74,16 @@ function agregarBotones() {
 
 function reproducir(e) {
     const target = e.target.id;
-    const peli = peliculas.find((e)=>e.id == target);
-    console.log(peli)
+    const peli = peliculas.find((e) => e.id == target);
     const contenedor = document.querySelector(".contenedor")
     contenedor.innerHTML = `${peli.video}`;
     contenedor.style.display = 'block';
+
+    let pelisLS = JSON.parse(localStorage.getItem("mirarDeNuevo")) || [];
+    pelisLS.push(peli)
+    localStorage.setItem("mirarDeNuevo", JSON.stringify(pelisLS))
+
+
 }
 
 
@@ -107,6 +112,7 @@ formulario.addEventListener("click", validar);
 const invitado = document.querySelector(".invitado");
 const btnSalir = document.querySelector(".btnSalir");
 const encabezado = document.querySelector(".encabezado");
+const mirarDeNuevo = JSON.parse(localStorage.getItem("mirarDeNuevo")) || [];
 
 function validar(e) {
     e.preventDefault();
