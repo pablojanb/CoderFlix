@@ -79,11 +79,12 @@ function reproducir(e) {
     contenedor.innerHTML = `${peli.video}`;
     contenedor.style.display = 'block';
 
-    let pelisLS = JSON.parse(localStorage.getItem("mirarDeNuevo")) || [];
-    pelisLS.push(peli)
-    localStorage.setItem("mirarDeNuevo", JSON.stringify(pelisLS))
 
-
+    if (localStorage.getItem("nombreUsuario") != null) {
+        let pelisLS = JSON.parse(localStorage.getItem(`"mirarDeNuevo${nombreUsuario.value}"`)) || [];
+        pelisLS.push(peli)
+        localStorage.setItem(`"mirarDeNuevo${nombreUsuario.value}"`, JSON.stringify(pelisLS))
+    }
 }
 
 
@@ -112,7 +113,7 @@ formulario.addEventListener("click", validar);
 const invitado = document.querySelector(".invitado");
 const btnSalir = document.querySelector(".btnSalir");
 const encabezado = document.querySelector(".encabezado");
-const mirarDeNuevo = JSON.parse(localStorage.getItem("mirarDeNuevo")) || [];
+const mirarDeNuevo = JSON.parse(localStorage.getItem(`"mirarDeNuevo${nombreUsuario.value}"`)) || [];
 
 function validar(e) {
     e.preventDefault();
