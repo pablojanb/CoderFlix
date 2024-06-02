@@ -103,7 +103,6 @@ function filtrarPorBuscador(e) {
 }
 
 // formulario ingreso
-
 const formulario = document.getElementById("formulario");
 let nombreUsuario = document.getElementById("nombreUsuario");
 const ingreso = document.querySelector(".ingreso");
@@ -160,4 +159,5 @@ function salir() {
     ingreso.classList.remove("ocultar");
     main.classList.add("ocultar");
     btnSalir.classList.add("ocultar")
+    nombreUsuario.value = ""
 }
