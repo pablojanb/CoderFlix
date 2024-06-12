@@ -1,37 +1,24 @@
-class Pelicula {
-    constructor(id, titulo, director, duracion, reparto, genero, poster, video) {
-        this.id = id;
-        this.titulo = titulo;
-        this.director = director;
-        this.duracion = duracion;
-        this.reparto = reparto;
-        this.genero = genero;
-        this.poster = poster;
-        this.video = video;
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzMyYTQwYjU5NjcyNzllMDEwN2M0ZDUyMWI1YzkxZCIsInN1YiI6IjY2Njc3ZDRkNmEzYjViY2Y3ZDE1ZDUwMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.t9Xq2qRwOn3Yh_7hxQ9RgSt33oQJ32a41HnAz9tKAWM'
     }
-}
+  };
+  
 
-const peli1 = new Pelicula(1, "toy story", "john lasseter", 81, "tom hanks, tim allen", "animada", "images/toystory_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dRb0VW14IZY?autoplay=1&si=Eq2M6kmoLaEhouEV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli2 = new Pelicula(2, "coco", "lee unkrich, adrian molina", 105, "anthony gonzalez, gael garcia bernal", "animada", "images/coco_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/awzWdtCezDo?autoplay=1&si=W2LDEiRK7z3hRx2a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli3 = new Pelicula(3, "moana", "ron clements", 107, "auli'i cravalho, dwayne johnson", "animada", "images/moana_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/oG_lt31kFfc?autoplay=1&si=fXdhMERW06nevGTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli4 = new Pelicula(4, "spider-man", "jon watts", 148, "tom holland, zendaya", "accion", "images/spiderman_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/r6t0czGbuGI?autoplay=1&si=mY4NhZhXWHjBUkWQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli5 = new Pelicula(5, "el rey leon", "rob minkoff", 88, "matthew broderick, james earl jones", "animada", "images/elreyleon_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/bjJvvrKl83M?autoplay=1&si=z_d-1ZJu3DKWE7JT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-
-const peli6 = new Pelicula(6, "super 8", "j. j. abrams", 112, "joel courtney, elle fanning", "aventura", "images/super8_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/89u6eSBSZmw?autoplay=1&si=rnwZqxso4Iu-pLPK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli7 = new Pelicula(7, "barbie", "greta gerwig", 114, "ryan gosling, margot robbie", "comedia", "images/barbie_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/zh4KhVSMwtQ?autoplay=1&si=G_0oRN0WaLnDLX61" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli8 = new Pelicula(8, "juno", "jason reitman", 96, "ellen page, jannifer garner", "comedia", "images/juno_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Hrto4Tx2kxo?autoplay=1&si=mcOEZupXcpzBkdMh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli9 = new Pelicula(9, "chicas pesadas", "mark waters", 97, "lindsay lohan, rachel mcadams", "comedia", "images/meangirls_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/fOdxaxJ-EDg?autoplay=1&si=OSNo6FQqwGFriiSD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli10 = new Pelicula(10, "soy leyenda", "francis lawrence", 101, "will smith, alice braga", "ciencia ficcion", "images/soyleyenda_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/TXQ7kRnFXS4?autoplay=1&si=YGDV7oK4ucIsJxnr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-
-const peli11 = new Pelicula(11, "escape a la libertad", "frank darabont", 142, "tim robbins, morgan freeman", "drama", "images/shawshank_redemption_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_znb1cUiQP8?si=i3akif_bfLEu-MI3&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli12 = new Pelicula(12, "el caballero de la noche", "christopher nolan", 152, "christian bale, michael caine, heath ledger, gary oldman, morgan freeman", "accion", "images/elcaballerooscuro_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dzQtWkpc2-c?si=ZApebbk-JrBqvicm&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli13 = new Pelicula(13, "pulp fiction", "quentin tarantino", 154, "john travolta, samuel l. jackson, uma thurman, bruce willis", "drama", "images/pulpfiction__poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/s7EdQ4FqbhY?si=ksYRuLKZfCg91Csl&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli14 = new Pelicula(14, "milagros inesperados", "frank darabont", 188, "tom hanks, michael clarke duncan", "drama", "images/milagrosinesperados_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ki4haFrqSrw?si=iDwljOhO_ccHGuoS&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-const peli15 = new Pelicula(15, "oppenheimer", "christopher nolan", 180, "cillian murphy, emily blunt, margot robbie, matt damon", "drama", "images/oppenheimer_poster.webp", '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/MVvGSBKV504?si=QXTGi_GVCJf7J_JE&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-
+  fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+    .then(response => response.json())
+    .then(data => {
+        const peliculas = (data.results).map((peli)=> {
+            return {
+                id: peli.id,
+                titulo: peli.title,
+                poster: `https://image.tmdb.org/t/p/w500${peli.poster_path}`
+            }
+        });
+        
 let grillaPeliculas = document.getElementById("grillaPeliculas");
-
-const peliculas = [peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8, peli9, peli10, peli11, peli12, peli13, peli14, peli15];
 
 peliculas.forEach((e) => crearPeliDom(e));
 agregarBotones();
@@ -101,6 +88,9 @@ function filtrarPorBuscador(e) {
     pelisFiltradas.forEach((e) => crearPeliDom(e));
     agregarBotones();
 }
+    })
+    .catch(err => console.error(err));
+
 
 // formulario ingreso
 const formulario = document.getElementById("formulario");
