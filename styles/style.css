@@ -87,6 +87,7 @@ nav ul {
   margin-bottom: 80px;
   border: 1px solid white;
   font-weight: normal;
+  background-color: black;
 }
 
 .buscadorPelicula:focus {
