@@ -13,10 +13,12 @@ const mirarDeNuevo = JSON.parse(localStorage.getItem(`"mirarDeNuevo${nombreUsuar
 function validar(e) {
     e.preventDefault();
     if (nombreUsuario.value) {
+        headerMobile.classList.remove("ocultar")
         titulo.innerText = `Bienvenido ${nombreUsuario.value}`
         ingreso.classList.add("ocultar")
         main.classList.remove("ocultar")
         encabezado.classList.remove("ocultar")
+        
 
         Swal.fire({
             title: "¿Desea recordar su nombre?",
@@ -37,11 +39,16 @@ function validar(e) {
     }
 }
 
+const headerMobile = document.querySelector(".headerMobile")
+
+
 invitado.addEventListener("click", () => {
+    headerMobile.classList.remove("ocultar")
     titulo.innerText = "Bienvenido!";
     ingreso.classList.add("ocultar");
     main.classList.remove("ocultar");
     encabezado.classList.remove("ocultar")
+    
 }
 )
 
@@ -79,7 +86,27 @@ function salir() {
     localStorage.removeItem("nombreUsuario");
     encabezado.classList.add("ocultar");
     ingreso.classList.remove("ocultar");
+    barraMobile.classList.add("ocultar")
     main.classList.add("ocultar");
     btnSalir.classList.add("ocultar")
     nombreUsuario.value = ""
 }
+
+
+
+let menu = false;
+const barraMobile = document.querySelector(".barraMobile")
+const btnMobile = document.querySelector(".btnMobile")
+btnMobile.addEventListener("click", ()=>{
+    
+    if (menu) {
+        barraMobile.classList.add("ocultar")
+        menu = false;
+    }
+    else {
+        barraMobile.classList.remove("ocultar")
+        menu = true;
+    }
+
+    
+})
