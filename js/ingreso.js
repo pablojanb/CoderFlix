@@ -34,6 +34,7 @@ function validar(e) {
                 });
                 localStorage.setItem("nombreUsuario", nombreUsuario.value)
                 btnSalir.classList.remove("ocultar")
+                btnSalirMobile.classList.remove("ocultar")
             }
         });
     }
@@ -51,15 +52,18 @@ invitado.addEventListener("click", () => {
     
 }
 )
-
+const btnSalirMobile = document.querySelector(".btnSalirMobile")
 let nombreUsuarioLS = localStorage.getItem("nombreUsuario")
 if (nombreUsuarioLS) {
     nombreUsuario.value = nombreUsuarioLS;
+    headerMobile.classList.remove("ocultar")
     encabezado.classList.remove("ocultar");
     titulo.innerText = `Bienvenido ${nombreUsuario.value}`
     ingreso.classList.add("ocultar")
     main.classList.remove("ocultar")
-    btnSalir.classList.remove("ocultar")
+    btnSalir.classList.remove("ocultar");
+    btnSalirMobile.classList.remove("ocultar")
+    
 }
 
 btnSalir.addEventListener("click", () => {
@@ -85,6 +89,7 @@ function salir() {
     titulo.innerText = "Bienvenido a CoderFlix";
     localStorage.removeItem("nombreUsuario");
     encabezado.classList.add("ocultar");
+    headerMobile.classList.add("ocultar")
     ingreso.classList.remove("ocultar");
     barraMobile.classList.add("ocultar")
     main.classList.add("ocultar");
@@ -98,7 +103,7 @@ let menu = false;
 const barraMobile = document.querySelector(".barraMobile")
 const btnMobile = document.querySelector(".btnMobile")
 btnMobile.addEventListener("click", ()=>{
-    
+    console.log(menu)
     if (menu) {
         barraMobile.classList.add("ocultar")
         menu = false;
@@ -109,4 +114,25 @@ btnMobile.addEventListener("click", ()=>{
     }
 
     
+})
+
+
+
+btnSalirMobile.addEventListener("click", () => {
+    Swal.fire({
+        title: "¿Esta seguro que desea salir?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Salir"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: `Hasta pronto ${nombreUsuario.value}!`,
+                icon: "success"
+            });
+            salir();
+        }
+    });
 })
