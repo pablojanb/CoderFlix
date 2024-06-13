@@ -7,7 +7,7 @@ const options = {
 };
 
 
-fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=2', options)
     .then(response => response.json())
     .then(data => {
         const pelisAccion = [];
@@ -128,11 +128,23 @@ function validar(e) {
         ingreso.classList.add("ocultar")
         main.classList.remove("ocultar")
         encabezado.classList.remove("ocultar")
-        recordarNombre = confirm("¿Desea recordar su nombre?")
-        if (recordarNombre) {
-            localStorage.setItem("nombreUsuario", nombreUsuario.value)
-            btnSalir.classList.remove("ocultar")
-        }
+
+        Swal.fire({
+            title: "¿Desea recordar su nombre?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Recordar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    icon: "success"
+                });
+                localStorage.setItem("nombreUsuario", nombreUsuario.value)
+                btnSalir.classList.remove("ocultar")
+            }
+        });
     }
 }
 
@@ -155,12 +167,26 @@ if (nombreUsuarioLS) {
 }
 
 btnSalir.addEventListener("click", () => {
-    let checkout = confirm("¿Esta seguro que desea salir?")
-    checkout && salir();
+    Swal.fire({
+        title: "¿Esta seguro que desea salir?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Salir"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: `Hasta pronto ${nombreUsuario.value}!`,
+                icon: "success"
+            });
+            salir();
+        }
+    });
 })
 
 function salir() {
-    titulo.innerText = `Hasta pronto ${nombreUsuario.value}!`;
+    titulo.innerText = "Bienvenido a CoderFlix";
     localStorage.removeItem("nombreUsuario");
     encabezado.classList.add("ocultar");
     ingreso.classList.remove("ocultar");

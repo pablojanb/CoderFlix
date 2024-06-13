@@ -11,11 +11,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Anton", sans-serif;
-  background-color: black;
   color: white;
 }
 
+body {
+  background-color: black;
+}
+
 header {
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,14 +160,17 @@ footer {
   font-size: 20px;
   padding: 5px 10px;
   text-align: center;
+  background-color: black;
 }
 
 .invitado {
   padding: 0 78px;
+  background-color: black;
 }
 
 .btnIngreso {
   transition: all 0.3s;
+  background-color: black;
 }
 
 .btnIngreso:hover {
