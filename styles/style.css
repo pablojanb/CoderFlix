@@ -18,6 +18,10 @@ body {
   background-color: black;
 }
 
+.headerMobile {
+  display: none;
+}
+
 header {
   background-color: black;
   display: flex;
@@ -125,7 +129,7 @@ nav ul {
   font-size: 16px;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .btnMirar:hover {
@@ -143,7 +147,6 @@ footer {
   margin: 20px;
 }
 
-
 /* ingreso */
 
 .ingreso {
@@ -155,7 +158,8 @@ footer {
   display: flex;
 }
 
-.formulario input, .invitado {
+.formulario input,
+.invitado {
   border: 1px solid orange;
   margin: 10px;
   font-size: 20px;
@@ -184,4 +188,69 @@ footer {
 
 .contenedor {
   height: 100vw;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 762px) {
+  header {
+    display: none;
+  }
+
+  .headerMobile {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+  }
+
+  .fa-bars {
+    color: orange;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .titulo {
+    margin: 40px;
+  }
+
+  .buscadorPelicula {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+
+  .grilla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .formulario {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .invitado {
+    padding: 5px 20px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  
+  .buscadorPelicula {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  
+  .grilla {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .grilla {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
