@@ -56,7 +56,6 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=2', opti
 
         function displayPelis(e) {
             grillaPeliculas.innerHTML = "";
-            const pelisFitro = peliculas.filter((el) => el.genero === e.target.id);
             e.target.id === "todas" && peliculas.forEach((e) => crearPeliDom(e));
             e.target.id === "drama" && pelisDrama.forEach((e) => crearPeliDom(e));
             e.target.id === "aventura" && pelisAventura.forEach((e) => crearPeliDom(e));
