@@ -73,21 +73,21 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=2', opti
 
         function agregarBotones() {
             const botonMirar = document.querySelectorAll(".btnMirar");
-            botonMirar.forEach((e) => e.addEventListener("click", reproducir));
+            botonMirar.forEach((e) => e.addEventListener("click", pelisVistas));
         }
 
-        function reproducir(e) {
+        function pelisVistas(e) {
             const target = e.target.id;
             const peli = peliculas.find((e) => e.id == target);
-            const contenedor = document.querySelector(".contenedor")
-            contenedor.innerHTML = `${peli.video}`;
-            contenedor.style.display = 'block';
 
 
             if (localStorage.getItem("nombreUsuario") != null) {
                 let pelisLS = JSON.parse(localStorage.getItem(`"mirarDeNuevo${nombreUsuario.value}"`)) || [];
-                pelisLS.push(peli)
-                localStorage.setItem(`"mirarDeNuevo${nombreUsuario.value}"`, JSON.stringify(pelisLS))
+                const repetida = pelisLS.find((el)=>el.id === peli.id)
+                if(!repetida){
+                    pelisLS.push(peli)
+                    localStorage.setItem(`"mirarDeNuevo${nombreUsuario.value}"`, JSON.stringify(pelisLS))
+                }
             }
         }
 
