@@ -101,6 +101,7 @@ function salir() {
     barraMobile.classList.add("ocultar")
     main.classList.add("ocultar");
     btnSalir.classList.add("ocultar")
+    btnSalirMobile.classList.add("ocultar")
     nombreUsuario.value = ""
 }
 
