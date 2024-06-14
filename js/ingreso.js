@@ -66,7 +66,8 @@ if (nombreUsuarioLS) {
     
 }
 
-btnSalir.addEventListener("click", () => {
+
+function salidaCheck() {
     Swal.fire({
         title: "¿Esta seguro que desea salir?",
         icon: "warning",
@@ -83,7 +84,13 @@ btnSalir.addEventListener("click", () => {
             salir();
         }
     });
-})
+}
+
+
+btnSalir.addEventListener("click", salidaCheck)
+btnSalirMobile.addEventListener("click", salidaCheck)
+
+
 
 function salir() {
     titulo.innerText = "Bienvenido a CoderFlix";
@@ -112,27 +119,5 @@ btnMobile.addEventListener("click", ()=>{
         barraMobile.classList.remove("ocultar")
         menu = true;
     }
-
-    
 })
 
-
-
-btnSalirMobile.addEventListener("click", () => {
-    Swal.fire({
-        title: "¿Esta seguro que desea salir?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Salir"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire({
-                title: `Hasta pronto ${nombreUsuario.value}!`,
-                icon: "success"
-            });
-            salir();
-        }
-    });
-})
