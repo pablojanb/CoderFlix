@@ -111,7 +111,6 @@ let menu = false;
 const barraMobile = document.querySelector(".barraMobile")
 const btnMobile = document.querySelector(".btnMobile")
 btnMobile.addEventListener("click", ()=>{
-    console.log(menu)
     if (menu) {
         barraMobile.classList.add("ocultar")
         menu = false;
