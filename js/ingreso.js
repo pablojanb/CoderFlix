@@ -122,3 +122,11 @@ btnMobile.addEventListener("click", ()=>{
     }
 })
 
+
+
+const btnGenero = document.querySelectorAll(".btnGenero")
+btnGenero.forEach((btn)=>{
+    btn.addEventListener("click", ()=>{
+        barraMobile.classList.add("ocultar")
+        menu = false;})
+})
