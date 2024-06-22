@@ -18,7 +18,7 @@ function validar(e) {
         ingreso.classList.add("ocultar")
         main.classList.remove("ocultar")
         encabezado.classList.remove("ocultar")
-        
+
 
         Swal.fire({
             title: "¿Desea recordar su nombre?",
@@ -49,7 +49,7 @@ invitado.addEventListener("click", () => {
     ingreso.classList.add("ocultar");
     main.classList.remove("ocultar");
     encabezado.classList.remove("ocultar")
-    
+
 }
 )
 const btnSalirMobile = document.querySelector(".btnSalirMobile")
@@ -63,7 +63,7 @@ if (nombreUsuarioLS) {
     main.classList.remove("ocultar")
     btnSalir.classList.remove("ocultar");
     btnSalirMobile.classList.remove("ocultar")
-    
+
 }
 
 
@@ -110,7 +110,7 @@ function salir() {
 let menu = false;
 const barraMobile = document.querySelector(".barraMobile")
 const btnMobile = document.querySelector(".btnMobile")
-btnMobile.addEventListener("click", ()=>{
+btnMobile.addEventListener("click", () => {
     if (menu) {
         barraMobile.classList.add("ocultar")
         menu = false;
@@ -122,10 +122,17 @@ btnMobile.addEventListener("click", ()=>{
 })
 
 
-
 const btnGenero = document.querySelectorAll(".btnGenero")
-btnGenero.forEach((btn)=>{
-    btn.addEventListener("click", ()=>{
+btnGenero.forEach((btn) => {
+    btn.addEventListener("click", () => {
         barraMobile.classList.add("ocultar")
-        menu = false;})
+        menu = false;
+    })
+})
+
+
+
+buscadorPelicula.addEventListener("click", () => {
+    barraMobile.classList.add("ocultar")
+    menu = false;
 })
