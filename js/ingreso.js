@@ -26,7 +26,8 @@ function validar(e) {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Recordar"
+            cancelButtonText: "No recordar",
+            confirmButtonText: "Si"
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
@@ -74,7 +75,8 @@ function salidaCheck() {
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Salir"
+        confirmButtonText: "Salir",
+        cancelButtonText: "Cancelar"
     }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire({
